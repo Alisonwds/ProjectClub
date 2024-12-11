@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectClub.Pages.LoginPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20" VerticalOptions="Center" Spacing="20">
+            <!-- Título -->
+            <Label Text="Login"
+                   FontSize="28"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+
+            <!-- Campos de Entrada -->
+            <Entry x:Name="EmailEntry"
+                   Placeholder="Email"
+                   Keyboard="Email"
+                   Margin="0,0,0,10" />
+
+            <Entry x:Name="SenhaEntry"
+                   Placeholder="Senha"
+                   IsPassword="True"
+                   Margin="0,0,0,20" />
+
+            <!-- Botões -->
+            <StackLayout Orientation="Vertical" Spacing="10">
+                <Button Text="Entrar"
+                        Clicked="OnLoginClicked"
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="50"
+                        BackgroundColor="#5A4FCF"
+                        TextColor="White" />
+
+                <Button Text="Registrar Novo Usuário"
+                        Clicked="OnRegisterClicked"
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="50"
+                        BackgroundColor="#5A4FCF"
+                        TextColor="White" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

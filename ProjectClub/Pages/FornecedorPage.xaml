@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectClub.Pages.FornecedorPage"
+             Title="FornecedorPage">
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Label Text="Cadastro de Fornecedor" FontSize="24" HorizontalOptions="Center" />
+
+            <!-- Formulário de Cadastro -->
+            <Entry x:Name="NomeRazaoSocialEntry" Placeholder="Nome ou Razão Social" />
+            <Entry x:Name="EnderecoEntry" Placeholder="Endereço" />
+            <Entry x:Name="BairroEntry" Placeholder="Bairro" />
+            <Entry x:Name="NumeroEntry" Placeholder="Número" />
+            <Entry x:Name="CepEntry" Placeholder="CEP" Keyboard="Numeric" />
+            <Entry x:Name="CidadeEntry" Placeholder="Cidade" />
+            <Entry x:Name="UfEntry" Placeholder="UF" />
+            <Entry x:Name="TelefoneEntry" Placeholder="Telefone" Keyboard="Telephone" />
+            <Entry x:Name="CelularEntry" Placeholder="Celular" Keyboard="Telephone" />
+            <Entry x:Name="EmailEntry" Placeholder="E-mail" Keyboard="Email" />
+
+            <Button Text="Salvar Fornecedor" Clicked="OnSaveClicked" />
+
+            <!-- Lista de Fornecedores -->
+            <Label Text="Fornecedores Cadastrados:" FontSize="20" Margin="0,20,0,10" />
+            <ListView x:Name="FornecedoresListView" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding NomeRazaoSocial}" Detail="{Binding Cidade}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

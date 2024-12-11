@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectClub.Pages.AgendaPage"
+             Title="AgendaPage">
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Label Text="Cadastro de Agenda" FontSize="24" HorizontalOptions="Center" />
+
+            <!-- Formulário de Cadastro -->
+            <Picker x:Name="AssociadoPicker" Title="Selecione o Associado" />
+            <Picker x:Name="EventoPicker" Title="Selecione o Evento" />
+            <DatePicker x:Name="DataHorarioPicker" />
+            <Entry x:Name="DescricaoEntry" Placeholder="Descrição" />
+
+            <Button Text="Salvar Agenda" Clicked="OnSaveClicked" />
+
+            <!-- Lista de Agendas -->
+            <Label Text="Agendas Cadastradas:" FontSize="20" Margin="0,20,0,10" />
+            <ListView x:Name="AgendasListView" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Descricao}" Detail="{Binding DataHorario}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

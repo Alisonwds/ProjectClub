@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectClub.MainPage">
+
+    <ScrollView>
+        <StackLayout Padding="20" VerticalOptions="Center">
+            <Label Text="Bem-vindo ao ProjectClub!" FontSize="24" HorizontalOptions="Center"/>
+            <!-- Botões com estilo uniforme -->
+                <Button Text="Acessar Produtos" Clicked="OnProdutosClicked" Style="{StaticResource DefaultButtonStyle}" />
+                <Button Text="Acessar Compra Produtos" Clicked="OnCompraProdutosClicked" Style="{StaticResource DefaultButtonStyle}" />
+                <Button Text="Acessar Compras" Clicked="OnComprasClicked" Style="{StaticResource DefaultButtonStyle}" />
+                <Button Text="Acessar Fornecedores" Clicked="OnFornecedoresClicked" Style="{StaticResource DefaultButtonStyle}" />
+                <Button Text="Acessar Agenda" Clicked="OnAgendaClicked" Style="{StaticResource DefaultButtonStyle}" />
+                <Button Text="Acessar Associado" Clicked="OnAssociadoClicked" Style="{StaticResource DefaultButtonStyle}" />
+                <Button Text="Acessar Dependente" Clicked="OnDependenteClicked" Style="{StaticResource DefaultButtonStyle}" />
+                <Button Text="Acessar Convidado" Clicked="OnConvidadoClicked" Style="{StaticResource DefaultButtonStyle}" />
+                <Button Text="Acessar Convidado Evento" Clicked="OnConvidadoEventoClicked" Style="{StaticResource DefaultButtonStyle}" />
+                <Button Text="Acessar Espaço Locavel" Clicked="OnEspacoClicked" Style="{StaticResource DefaultButtonStyle}" />
+                <Button Text="Acessar Evento" Clicked="OnEventoClicked" Style="{StaticResource DefaultButtonStyle}" />
+                <Button Text="Sair" Clicked="OnLogoutClicked" Style="{StaticResource DefaultButtonStyle}" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

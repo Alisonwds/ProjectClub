@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectClub.Pages.ProdutosCompraPage"
+             Title="ProdutosCompraPage">
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Label Text="Adicionar Produto à Compra" FontSize="24" HorizontalOptions="Center" />
+
+            <!-- Seleção de Compra -->
+            <Picker x:Name="CompraPicker" Title="Selecione a Compra" />
+
+            <!-- Seleção de Produto -->
+            <Picker x:Name="ProdutoPicker" Title="Selecione o Produto" />
+
+            <!-- Formulário de Adição -->
+            <Entry x:Name="QuantidadeEntry" Placeholder="Quantidade" Keyboard="Numeric" />
+            <Entry x:Name="PrecoUnitarioEntry" Placeholder="Preço Unitário" Keyboard="Numeric" />
+
+            <Button Text="Adicionar Produto" Clicked="OnSaveClicked" />
+
+            <!-- Lista de Produtos da Compra -->
+            <Label Text="Produtos da Compra:" FontSize="20" Margin="0,20,0,10" />
+            <ListView x:Name="ProdutosCompraListView" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding ProdutoId}" Detail="Quantidade: {Binding Quantidade}, Preço Unitário: {Binding PrecoUnitario}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

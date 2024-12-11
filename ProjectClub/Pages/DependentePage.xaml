@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectClub.Pages.DependentePage"
+             Title="DependentePage">
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Label Text="Cadastro de Dependente" FontSize="24" HorizontalOptions="Center" />
+
+            <!-- Formulário de Cadastro -->
+            <Entry x:Name="NomeEntry" Placeholder="Nome" />
+            <Entry x:Name="CpfEntry" Placeholder="CPF" Keyboard="Numeric" />
+            <Entry x:Name="RgEntry" Placeholder="Registro Geral (RG)" Keyboard="Numeric" />
+            <DatePicker x:Name="DataNascimentoPicker" />
+            <Entry x:Name="TipoDeVinculoEntry" Placeholder="Tipo de Vínculo (Ex: Filho, Esposa)" />
+            <Picker x:Name="SocioTitularPicker" Title="Selecione o Sócio Titular" />
+
+            <Button Text="Salvar Dependente" Clicked="OnSaveClicked" />
+
+            <!-- Lista de Dependentes -->
+            <Label Text="Dependentes Cadastrados:" FontSize="20" Margin="0,20,0,10" />
+            <ListView x:Name="DependentesListView" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Nome}" Detail="{Binding TipoDeVinculo}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectClub.Pages.EventoPage">
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Label Text="Cadastro de Evento" FontSize="24" HorizontalOptions="Center" />
+
+            <!-- Formulário de Cadastro -->
+            <Entry x:Name="NomeEventoEntry" Placeholder="Nome do Evento" />
+            <Picker x:Name="EspacoLocavelPicker" Title="Selecione o Espaço Locável" />
+            <Picker x:Name="AssociadoPicker" Title="Selecione o Associado Responsável" />
+            <DatePicker x:Name="DataInicioPicker" />
+            <DatePicker x:Name="DataFimPicker" />
+            <Entry x:Name="ValorLocacaoEntry" Placeholder="Valor da Locação" Keyboard="Numeric" />
+
+            <Button Text="Salvar Evento" Clicked="OnSaveClicked" />
+
+            <!-- Lista de Eventos -->
+            <Label Text="Eventos Cadastrados:" FontSize="20" Margin="0,20,0,10" />
+            <ListView x:Name="EventosListView" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding NomeEvento}" Detail="{Binding DataInicio}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

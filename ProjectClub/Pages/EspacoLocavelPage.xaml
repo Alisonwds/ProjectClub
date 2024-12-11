@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectClub.Pages.EspacoLocavelPage"
+             Title="EspacoLocavelPage">
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Label Text="Cadastro de Espaço Locável" FontSize="24" HorizontalOptions="Center" />
+
+            <!-- Formulário de Cadastro -->
+            <Entry x:Name="NomeEspacoEntry" Placeholder="Nome do Espaço" />
+            <Entry x:Name="TamanhoEntry" Placeholder="Tamanho (Ex: 50m²)" />
+            <Entry x:Name="CapacidadePessoasEntry" Placeholder="Capacidade de Pessoas" Keyboard="Numeric" />
+            <DatePicker x:Name="DataConstrucaoPicker" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="É locável?" VerticalOptions="Center" />
+                <Switch x:Name="LocalSwitch" />
+            </StackLayout>
+
+            <Button Text="Salvar Espaço Locável" Clicked="OnSaveClicked" />
+
+            <!-- Lista de Espaços Locáveis -->
+            <Label Text="Espaços Locáveis Cadastrados:" FontSize="20" Margin="0,20,0,10" />
+            <ListView x:Name="EspacosLocaveisListView" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding NomeEspaco}" Detail="{Binding Tamanho}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
